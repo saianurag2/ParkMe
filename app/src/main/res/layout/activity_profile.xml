@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.toshiba.parkme.ProfileActivity">
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="PROFILE"
+    android:textSize="32dp"
+    android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:layout_marginTop="64dp"
+        android:textSize="32dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INFO"
+        android:textSize="32dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="100dp"
+        android:layout_height="wrap_content"
+        android:text="LIST OF PARKING LOTS"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="120dp"
+        android:layout_height="wrap_content"
+        android:text="BOOKING STATUS"
+        />
+
+
+
+
+</LinearLayout>

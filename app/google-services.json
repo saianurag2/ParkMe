@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "649462595215",
+    "firebase_url": "https://spark-bbed9.firebaseio.com",
+    "project_id": "spark-bbed9",
+    "storage_bucket": "spark-bbed9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649462595215:android:30ae8055d3f51702",
+        "android_client_info": {
+          "package_name": "com.example.toshiba.parkme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649462595215-9u4kh93ucfjqlh6mdp6g4tepf5p0st6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsyGtZOtNBlIzqjitwGE0LYo1aCvPA-ek"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
