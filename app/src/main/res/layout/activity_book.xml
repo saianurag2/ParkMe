@@ -103,7 +103,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="177dp"
         android:padding="8dp"
-        android:text="P.S. Please Select Exit Time (24```` hours format) "
+        android:text="P.S. Please Select Exit Time (24 hours format) "
         android:textSize="16sp" />
 
 

@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
-        <activity android:name=".MainActivity">
+        >
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,12 +19,23 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".BookActivity" />
+        <activity android:name=".SignupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".BookActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AvailableActivity"></activity>
+        <activity android:name=".SAMAvailable"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SdAvailable"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RCAvailable"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

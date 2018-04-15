@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class AvailableActivity extends AppCompatActivity {
 
@@ -24,5 +25,14 @@ public class AvailableActivity extends AppCompatActivity {
                 startActivity(backIntent);
             }
         }));
+
+        Button back1 = (Button) findViewById(R.id.back1);
+
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(AvailableActivity.this, ListActivity.class);
+            }
+        });
     }
 }
