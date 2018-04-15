@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toshiba.parkme.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.toshiba.parkme.MainActivity">
+    android:background="@drawable/login_img"
+    android:fillViewport="true"
+    >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toshiba.parkme.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WELCOME"
-        android:textSize="32dp"
+        android:text="ParkMe"
+        android:textSize="48sp"
+        android:layout_marginTop="56dp"
+        android:textColor="@color/colorPrimary"
         android:textAlignment="center"/>
 
     <Button
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="100dp"
-        android:text="SIGN UP" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/login"
+        android:layout_margin="8dp"
+        android:text="@string/sign_up" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="120dp"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:text="@string/login" />
+</RelativeLayout>
 
-</LinearLayout>
+</ScrollView>

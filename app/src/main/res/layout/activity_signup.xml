@@ -1,62 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toshiba.parkme.SignupActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.toshiba.parkme.SignupActivity">
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="SIGN UP"
-        android:textSize="32dp"
-        android:textAlignment="center"/>
+        android:textSize="32sp" />
 
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/name_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="USER NAME"
+        android:layout_marginTop="32dp"
+        android:hint="@string/user_name"
         android:inputType="text" />
 
-
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/email_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="EMAIL"
-        android:inputType="text" />
+        android:layout_marginTop="32dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/mobile_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="MOBILE"
-        android:inputType="text" />
+        android:layout_marginTop="32dp"
+        android:hint="@string/mobile"
+        android:inputType="text|number|phone" />
 
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/password_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="PASSWORD"
-        android:inputType="text" />
+        android:layout_marginTop="32dp"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/password_field2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="CONFIRM PASSWORD"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/submit1"
         android:layout_width="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginLeft="120dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
+        android:text="@string/submit"
         />
-
-
-
-
 </LinearLayout>
+</ScrollView>

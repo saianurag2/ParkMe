@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">ParkMe</string>
+    <string name="user_id">USER ID</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="user_name">USER NAME</string>
+    <string name="email">EMAIL</string>
+    <string name="mobile">MOBILE</string>
+    <string name="password">PASSWORD</string>
+    <string name="submit">SUBMIT</string>
+    <string name="welcome">WELCOME</string>
+     <string name="login">LOGIN</string>
+    <string name="congratulations">CONGRATULATIONS!</string>
+    <string name="slot_is_available">SLOT IS AVAILABLE.</string>
+    <string name="book_and_pay">BOOK AND PAY</string>
+    <string name="back_to_profile">BACK TO PROFILE</string>
+    <string name="profile">PROFILE</string>
+    <string name="list_of_parking_lots">LIST OF PARKING LOTS</string>
+    <string name="booking_status">BOOKING STATUS</string>
+    <string name="logout">Logout</string>
+    <string name="welcome_profile">Welcome!</string>
+    <string name="from">FROM :</string>
+    <string name="to">TO :</string>
+    <string name="check_availability">CHECK AVAILABILITY</string>
 </resources>

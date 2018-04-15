@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 
-
 public class AvailableActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +16,7 @@ public class AvailableActivity extends AppCompatActivity {
 
         Button back_button = (Button) findViewById(R.id.back);
 
-        back_button.setOnClickListener((new OnClickListener() {
+        back_button.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent backIntent = new Intent(AvailableActivity.this, ProfileActivity.class);

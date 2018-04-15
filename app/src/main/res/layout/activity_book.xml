@@ -1,98 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toshiba.parkme.BookActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.toshiba.parkme.BookActivity">
+    android:fillViewport="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <TextView
+    <!--TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp"
-        android:padding="10dp"
+        android:layout_alignParentLeft="true"
+        android:padding="8dp"
         android:text="DATE :"
         android:textSize="32dp"
-        android:id="@+id/date" />
+        android:id="@+id/date_textview" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/date"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="7dp"
-        android:layout_toEndOf="@+id/date"
-        android:hint="DD/MM/YYYY"
-        android:inputType="text"
-        android:id="@+id/editDate" />
+        android:layout_toEndOf="@id/date_textview"
+        android:layout_alignParentRight="true"
+        android:inputType="date"
+        android:id="@+id/editDate"
+        android:padding="16dp"/-->
 
 
     <TextView
-        android:id="@+id/duration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editDate"
-        android:layout_below="@+id/date"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:text="DURATION "
-        android:textSize="32dp" />
-
-    <TextView
+        android:id="@+id/From"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="220dp"
-        android:padding="10dp"
-        android:text="FROM :"
-        android:textSize="32dp"
-        android:id="@+id/From" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="19dp"
+        android:padding="8dp"
+        android:text="@string/from"
+        android:textSize="32sp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/fromtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/From"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:padding="16dp"
+        android:text="FromTime"
+        android:textSize="20sp" />
+
+    <!-- android:layout_below="@id/date_textview"-->
+    <!--<EditText-->
+        <!--android:id="@+id/editFrom"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/editDate"-->
+        <!--android:layout_toEndOf="@+id/From"-->
+        <!--android:hint="HH:MM"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:inputType="time"-->
+        <!--android:padding="16dp" />-->
+
+
+    <!--Spinner
         android:id="@+id/editFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editDate"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="8dp"
-        android:hint="HH:MM"
-        android:inputType="text" />
+        android:layout_below="@id/editDate"
+        android:layout_toEndOf="@+id/From"
+        android:layout_margin="16dp">
+
+    </Spinner-->
+
 
     <TextView
+        android:id="@+id/To"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="270dp"
-        android:padding="10dp"
-        android:text=" TO :"
-        android:textSize="32dp"
-        android:id="@+id/To" />
+        android:layout_marginTop="107dp"
+        android:layout_toStartOf="@+id/check"
+        android:text="@string/to"
+        android:textSize="32sp" />
 
-    <EditText
+    <Spinner
         android:id="@+id/editTo"
+        android:layout_width="67dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/To"
+        android:layout_centerHorizontal="true">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/format"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editFrom"
-        android:layout_below="@+id/editFrom"
-        android:hint="HH:MM"
-        android:inputType="text" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
+        android:padding="8dp"
+        android:text="P.S. Please Select Exit Time (24```` hours format) "
+        android:textSize="16sp" />
+
+
+
+    <!--android:layout_below="@id/editFrom"-->
+    <!--<EditText-->
+        <!--android:id="@+id/editTo"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/editFrom"-->
+        <!--android:layout_toEndOf="@id/From"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:hint="NUMBER OF HOURS"-->
+        <!--android:padding="16dp"-->
+        <!--android:inputType="number" />-->
 
     <Button
         android:id="@+id/check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/To"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="41dp"
-        android:layout_toEndOf="@+id/To"
-        android:text="CHECK AVAILABILITY" />
+       android:layout_centerInParent="true"
+        android:text="@string/check_availability" />
+
+    <Button
+        android:id="@+id/backbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="129dp"
+        android:text="Back to Profile" />
 
 
 </RelativeLayout>
+</ScrollView>
