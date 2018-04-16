@@ -7,10 +7,18 @@ public class User {
     private String name;
     private String phone_number;
     private String confpassword;
-    private int from,to;
+    private int from,to,loc;
 
     public User() {
 
+    }
+
+    public int getLoc() {
+        return loc;
+    }
+
+    public void setLoc(int loc) {
+        this.loc = loc;
     }
 
     public int getFrom() {

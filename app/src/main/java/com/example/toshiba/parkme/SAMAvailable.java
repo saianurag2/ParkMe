@@ -1,5 +1,6 @@
 package com.example.toshiba.parkme;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,11 @@ public class SAMAvailable extends AppCompatActivity {
     DatabaseReference databaseReference;
 
     public TextView SAM;
+    int av,bk;
+
+    FirebaseUser current_user;
+
+    DatabaseReference dref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +42,31 @@ public class SAMAvailable extends AppCompatActivity {
         final int ftime = intent.getIntExtra("fromtime",0);
         final int ttime = intent.getIntExtra("totime",0);
 
-        Toast.makeText(getApplicationContext(), "onCreateBegins", Toast.LENGTH_SHORT).show();
+
+//        Toast.makeText(getApplicationContext(), "onCreateBegins", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),"FROM"+ftime+"TO"+ttime,Toast.LENGTH_LONG).show();
+
 
         SAM = (TextView) findViewById(R.id.availability_status);
+
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        dref = FirebaseDatabase.getInstance().getReference();
+
+
+        dref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                av = dataSnapshot.child("Parking Area").child("SAM").child("Available").getValue(Integer.class);
+                bk = dataSnapshot.child("Parking Area").child("SAM").child("Booked").getValue(Integer.class);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
 
@@ -54,7 +82,7 @@ public class SAMAvailable extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
                 Log.w("TAG", "Failed to read value.");
-                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
+  //              Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
 
 
             }
@@ -89,34 +117,28 @@ public class SAMAvailable extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final FirebaseUser current_user;
-                DatabaseReference dref;
-                current_user = FirebaseAuth.getInstance().getCurrentUser();
-                dref = FirebaseDatabase.getInstance().getReference();
 
-                dref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        int from = dataSnapshot.child("Users").child(current_user.getUid()).child("from").getValue(Integer.class);
-                        int to = dataSnapshot.child("Users").child(current_user.getUid()).child("to").getValue(Integer.class);
 
-                        //from and to data in firebase to be changed to current hour+1 to to_value_from_book_activity
-                        //Also decrement the value at parkingarea -> SAM -> Available
-                        //Also increment value at parkingrea -> SAM -> booked
+                if(av==0) {
+                    Toast.makeText(getApplicationContext(),"NO SLOTS AVAILABLE FOR BOOKING!", Toast.LENGTH_LONG).show();
+                }else {
+                    dref.child("Users").child(current_user.getUid()).child("from").setValue(ftime);
+                    dref.child("Users").child(current_user.getUid()).child("to").setValue(ttime);
+                    dref.child("Users").child(current_user.getUid()).child("loc").setValue(1);
+                    dref.child("Parking Area").child("SAM").child("Available").setValue(av - 1);
+                    dref.child("Parking Area").child("SAM").child("Booked").setValue(bk + 1);
 
-                    }
+                    Toast.makeText(getApplicationContext(), "Booking Successful!", Toast.LENGTH_LONG).show();
+                    Intent back = new Intent(SAMAvailable.this, ProfileActivity.class);
+                    startActivity(back);
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
-
-                Toast.makeText(getApplicationContext(),"Booking Successful!", Toast.LENGTH_LONG).show();
-
+                }
             }
         });
 
 
     }
+
+
 }

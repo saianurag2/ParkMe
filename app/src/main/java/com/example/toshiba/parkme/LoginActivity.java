@@ -28,6 +28,16 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mEmailField;
     private EditText mPasswordField;
     private Button submit_button21;
+//
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        if(mAuth.getCurrentUser() !=null){
+//            finish();
+//            startActivity(new Intent(LoginActivity.this,ProfileActivity.class));
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
 
     }

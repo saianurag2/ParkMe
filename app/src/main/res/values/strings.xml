@@ -21,4 +21,10 @@
     <string name="from">FROM :</string>
     <string name="to">TO :</string>
     <string name="check_availability">CHECK AVAILABILITY</string>
+    <string name="book_a_slot">BOOK A SLOT</string>
+    <string name="back_to_profile11">Back to Profile</string>
+    <string name="fromtime">FromTime</string>
+    <string name="number_of_hours">Number of hours :</string>
+    <string name="back_to_profile_1">Back to Profile</string>
+    <string name="book">BOOK</string>
 </resources>

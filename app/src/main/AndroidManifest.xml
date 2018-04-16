@@ -30,6 +30,10 @@
         <activity android:name=".BookActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".AvailableActivity"></activity>
+        <activity android:name=".bookagain"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StatusShow"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SAMAvailable"
             android:screenOrientation="portrait"/>
         <activity android:name=".SdAvailable"

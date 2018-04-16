@@ -38,6 +38,16 @@ public class SignupActivity extends AppCompatActivity {
     //firebase
     private FirebaseAuth mAuth;
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        if(mAuth.getCurrentUser() !=null){
+//            finish();
+//            startActivity(new Intent(SignupActivity.this,ProfileActivity.class));
+//        }
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,9 +87,10 @@ public class SignupActivity extends AppCompatActivity {
                                             if(task.isSuccessful()) {
                                                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
                                                 databaseReference = databaseReference.child(Fuser.getUid());
-                                                int bfrom,bto;
+                                                int bfrom,bto,loc;
                                                 bfrom=0;
                                                 bto=0;
+                                                loc=0;
                                                 User userr = new User();
                                                 userr.setName(Name);
                                                 userr.setEmail(Email);
@@ -87,12 +98,13 @@ public class SignupActivity extends AppCompatActivity {
                                                 userr.setPassword(Pass);
                                                 userr.setFrom(bfrom);
                                                 userr.setTo(bto);
+                                                userr.setLoc(loc);
 
                                                 databaseReference.setValue(userr);
 
                                             }
                                             else if (!task.isSuccessful()) {
-                                                Toast.makeText(getApplicationContext(), "Please check your internet connection", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(getApplicationContext(), "Signin Failure", Toast.LENGTH_LONG).show();
                                             }
 
                                         }
@@ -103,7 +115,7 @@ public class SignupActivity extends AppCompatActivity {
                                 startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "User Already registered", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "SignUp Error", Toast.LENGTH_LONG).show();
                             }
 
                         }
@@ -115,50 +127,6 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
- /*   private void SignUp() {
-
-        mAuth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                Toast.makeText(getApplicationContext(), "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                if(task.isSuccessful()) {
-                    final FirebaseUser Fuser = task.getResult().getUser();
-                    if(Fuser != null ) {
-                        mAuth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()) {
-                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
-                                    databaseReference = databaseReference.child(Fuser.getUid());
-
-                                    User userr = new User();
-                                    userr.setName(Name);
-                                    userr.setEmail(Email);
-                                    userr.setPhone_number(Mobile);
-                                    userr.setPassword(Pass);
-
-                                    databaseReference.setValue(userr);
-
-                                }
-                                else if (!task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Please check your internet connection", Toast.LENGTH_LONG).show();
-                                }
-
-                            }
-                        });
-
-                    }
-                    Toast.makeText(SignupActivity.this, "Successful!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please check your internet connection", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
-*/
     private boolean isValidate() {
         boolean isValidate = true;
         Name = name.getText().toString().trim();
@@ -220,6 +188,50 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
+ /*   private void SignUp() {
+
+        mAuth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                Toast.makeText(getApplicationContext(), "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                if(task.isSuccessful()) {
+                    final FirebaseUser Fuser = task.getResult().getUser();
+                    if(Fuser != null ) {
+                        mAuth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()) {
+                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+                                    databaseReference = databaseReference.child(Fuser.getUid());
+
+                                    User userr = new User();
+                                    userr.setName(Name);
+                                    userr.setEmail(Email);
+                                    userr.setPhone_number(Mobile);
+                                    userr.setPassword(Pass);
+
+                                    databaseReference.setValue(userr);
+
+                                }
+                                else if (!task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "Please check your internet connection", Toast.LENGTH_LONG).show();
+                                }
+
+                            }
+                        });
+
+                    }
+                    Toast.makeText(SignupActivity.this, "Successful!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Please check your internet connection", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+*/
 
 
 /*public class SignupActivity extends AppCompatActivity {

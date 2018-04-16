@@ -22,6 +22,14 @@ public class ListActivity extends AppCompatActivity {
 
         final int ftime = intent.getIntExtra("fromtime",0);
         final int ttime = intent.getIntExtra("totime",0);
+        final int f1,f2,t1,t2;
+        f1=ftime;
+        f2=ftime;
+        t1=ttime;
+        t2=ttime;
+
+//        Toast.makeText(getApplicationContext(),"F   "+ftime+"T   "+ttime,Toast.LENGTH_LONG).show();
+
 
         //Toast.makeText(getApplicationContext(),"into list",Toast.LENGTH_SHORT).show();
         TextView south_avenue_mall = (TextView) findViewById(R.id.south_avenue_mall);
@@ -32,11 +40,12 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
-               // Toast.makeText(getApplicationContext(),"into list",Toast.LENGTH_SHORT).show();
+
                 Intent south_avenue_mallIntent = new Intent(ListActivity.this, SAMAvailable.class);
+
                 south_avenue_mallIntent.putExtra("fromtime", ftime);
                 south_avenue_mallIntent.putExtra("totime", ttime);
+
 
                 // Start the new activity
                 startActivity(south_avenue_mallIntent);
@@ -53,8 +62,9 @@ public class ListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent samdareeyaIntent = new Intent(ListActivity.this, SdAvailable.class);
-                samdareeyaIntent.putExtra("fromtime",ftime);
-                samdareeyaIntent.putExtra("totoime",ttime);
+                samdareeyaIntent.putExtra("fromtime",f1);
+                samdareeyaIntent.putExtra("totime",t1);
+
 
                 // Start the new activity
                 startActivity(samdareeyaIntent);
@@ -70,8 +80,10 @@ public class ListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent pvr_cinemasIntent = new Intent(ListActivity.this, RCAvailable.class);
-                pvr_cinemasIntent.putExtra("fromtime",ftime);
-                pvr_cinemasIntent.putExtra("totoime",ttime);
+                pvr_cinemasIntent.putExtra("fromtime",f2);
+                pvr_cinemasIntent.putExtra("totime",t2);
+
+
 
                 // Start the new activity
                 startActivity(pvr_cinemasIntent);
