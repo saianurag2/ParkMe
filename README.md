@@ -14,7 +14,7 @@ Android
 Firebase
 
 ### Flow Diagram
-![](image/flow-chart.jpg)
+![](image/flow-chart.png)
 
 ## Work Flow
 The user needs to login/signup in the app providing email and password.
@@ -23,7 +23,7 @@ This reduces the time for locating a vacant parking slot and thereby giving a ha
 
 ### Few of the Screens
 
-![](image/screens.jpg)
+![](image/screens.png)
 
 
 ## Team members
