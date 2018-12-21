@@ -15,7 +15,7 @@ Firebase
 
 ### Flow Diagram
 
-![alt text](https://raw.githubusercontent.com/saianurag2/ParkMe/image/flow-chart.png)
+![alt text](https://github.com/saianurag2/ParkMe/blob/master/image/flow-chart.PNG)
 
 ## Work Flow
 The user needs to login/signup in the app providing email and password.
@@ -24,7 +24,8 @@ This reduces the time for locating a vacant parking slot and thereby giving a ha
 
 ### Few of the Screens
 
-![](image/screens.png)
+
+![alt text](https://github.com/saianurag2/ParkMe/blob/master/image/screens.PNG)
 
 
 ## Team members
