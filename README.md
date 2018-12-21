@@ -14,7 +14,8 @@ Android
 Firebase
 
 ### Flow Diagram
-![](image/flow-chart.png)
+
+![alt text](https://raw.githubusercontent.com/saianurag2/ParkMe/image/flow-chart.png)
 
 ## Work Flow
 The user needs to login/signup in the app providing email and password.
