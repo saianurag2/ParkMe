@@ -1,160 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.BookActivity"
+    tools:context="com.example.toshiba.parkme.activity.BookActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_page"
     android:fillViewport="true">
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.BookActivity"
-    android:fillViewport="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!--TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:padding="8dp"
-        android:text="DATE :"
-        android:textSize="32dp"
-        android:id="@+id/date_textview" />
+        <TextView
+            android:id="@+id/From"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:fontFamily="@font/noto_sans"
+            android:padding="8dp"
+            android:text="@string/from"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/fromtime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/date_textview"
-        android:layout_alignParentRight="true"
-        android:inputType="date"
-        android:id="@+id/editDate"
-        android:padding="16dp"/-->
-
-
-    <TextView
-        android:id="@+id/From"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="25dp"
-        android:padding="8dp"
-        android:text="@string/from"
-        android:textSize="32sp" />
-
-    <TextView
-        android:id="@+id/fromtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/From"
-        android:layout_marginEnd="66dp"
-        android:padding="16dp"
-        android:text="@string/fromtime"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/fromtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/From"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="76dp"
+            android:padding="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/fromtime"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/From"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/To"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="105dp"
-        android:text="@string/number_of_hours"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/To"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="105dp"
+            android:text="@string/number_of_hours"
+            android:fontFamily="@font/noto_sans"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/editTo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/From" />
 
 
-    <EditText
-        android:id="@+id/editTo"
-        android:layout_width="72dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/To"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="100dp"
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/editTo"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/To"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/noto_sans"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/To"
+            app:layout_constraintTop_toTopOf="@+id/To" />
 
-    <!--TextView
-        android:id="@+id/format"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="177dp"
-        android:padding="8dp"
-        android:text="P.S. Please Select Exit Time (24 hours format) "
-        android:textSize="16sp" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/To"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="88dp"
+            android:background="@drawable/button_curved"
+            android:padding="15dp"
+            android:text="@string/check_availability"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/To" />
 
-
-
-
-    <Button
-        android:id="@+id/check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-        android:layout_below="@id/To"
-        android:layout_margin="24dp"
-        android:text="@string/check_availability" />
-
-    <Button
-        android:id="@+id/backbook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_below="@id/check"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"
-        android:text="@string/back_to_profile_1" />
-
-
-</RelativeLayout>
-</ScrollView>
-
-    <!-- android:layout_below="@id/date_textview"-->
-    <!--<EditText-->
-    <!--android:id="@+id/editFrom"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@id/editDate"-->
-    <!--android:layout_toEndOf="@+id/From"-->
-    <!--android:hint="HH:MM"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:inputType="time"-->
-    <!--android:padding="16dp" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backbook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button_curved"
+            android:padding="15dp"
+            android:text="@string/back_to_profile"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
 
-    <!--Spinner
-        android:id="@+id/editFrom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editDate"
-        android:layout_toEndOf="@+id/From"
-        android:layout_margin="16dp">
-
-    </Spinner-->
-
-    <!--android:layout_below="@id/editFrom"-->
-    <!--<EditText-->
-    <!--android:id="@+id/editTo"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@id/editFrom"-->
-    <!--android:layout_toEndOf="@id/From"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:hint="NUMBER OF HOURS"-->
-    <!--android:padding="16dp"-->
-    <!--android:inputType="number" />-->
-
-    <!--<Spinner-->
-    <!--android:id="@+id/editTo"-->
-    <!--android:layout_width="72dp"-->
-    <!--android:layout_height="40dp"-->
-    <!--android:layout_alignBottom="@+id/To"-->
-    <!--android:layout_centerHorizontal="true">-->
-
-    <!--</Spinner>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

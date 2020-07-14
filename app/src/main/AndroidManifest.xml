@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity"
+        <activity android:name=".activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,26 +19,26 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".SignupActivity"
+        <activity android:name=".activity.SignupActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ProfileActivity"
+        <activity android:name=".activity.ProfileActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ListActivity"
+        <activity android:name=".activity.ListActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".BookActivity"
+        <activity android:name=".activity.BookActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".AvailableActivity"></activity>
-        <activity android:name=".bookagain"
+        <activity android:name=".activity.AvailableActivity"></activity>
+        <activity android:name=".activity.bookagain"
             android:screenOrientation="portrait"/>
-        <activity android:name=".StatusShow"
+        <activity android:name=".activity.StatusShow"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SAMAvailable"
+        <activity android:name=".activity.SAMAvailable"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SdAvailable"
+        <activity android:name=".activity.SdAvailable"
             android:screenOrientation="portrait"/>
-        <activity android:name=".RCAvailable"
+        <activity android:name=".activity.RCAvailable"
             android:screenOrientation="portrait"/>
     </application>
 

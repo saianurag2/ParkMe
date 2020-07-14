@@ -1,4 +1,4 @@
-package com.example.toshiba.parkme;
+package com.example.toshiba.parkme.model;
 
 public class User {
 

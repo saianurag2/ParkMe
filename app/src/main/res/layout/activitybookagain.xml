@@ -2,15 +2,16 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.BookActivity"
+    tools:context="com.example.toshiba.parkme.activity.BookActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/login_page">
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.example.toshiba.parkme.BookActivity"
+        tools:context="com.example.toshiba.parkme.activity.BookActivity"
         android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

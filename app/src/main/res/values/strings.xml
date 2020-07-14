@@ -24,7 +24,16 @@
     <string name="book_a_slot">BOOK A SLOT</string>
     <string name="back_to_profile11">Back to Profile</string>
     <string name="fromtime">FromTime</string>
-    <string name="number_of_hours">Number of hours :</string>
+    <string name="number_of_hours">Duration (Hours) :</string>
     <string name="back_to_profile_1">Back to Profile</string>
     <string name="book">BOOK</string>
+    <string name="back">BACK</string>
+    <string name="south_avenue_mall">SOUTH AVENUE MALL</string>
+    <string name="samdareeya">SAMDAREEYA</string>
+    <string name="sadar">SADAR</string>
+    <string name="areas_list">AREAS LIST</string>
+    <string name="email_id">Email ID</string>
+    <string name="passwordLogin">Password</string>
+    <string name="logintxt">LOGIN</string>
+    <string name="parkme">ParkMe</string>
 </resources>

@@ -2,9 +2,10 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.ProfileActivity"
+    tools:context="com.example.toshiba.parkme.activity.ProfileActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="@drawable/login_page"
     >
     <LinearLayout
 
