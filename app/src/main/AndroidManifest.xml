@@ -3,22 +3,19 @@
     package="com.example.toshiba.parkme">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".activity.MainActivity"
-            android:screenOrientation="portrait">
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.SignupActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.LoginActivity"
@@ -29,8 +26,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.BookActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AvailableActivity"></activity>
-        <activity android:name=".activity.bookagain"
+        <activity android:name=".activity.AvailableActivity"/>
+        <activity android:name=".activity.BookAgainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.StatusShow"
             android:screenOrientation="portrait"/>

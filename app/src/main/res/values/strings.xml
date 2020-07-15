@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">ParkMe</string>
     <string name="user_id">USER ID</string>
-    <string name="sign_up">SIGN UP</string>
     <string name="user_name">USER NAME</string>
     <string name="email">EMAIL</string>
     <string name="mobile">MOBILE</string>
     <string name="password">PASSWORD</string>
     <string name="submit">SUBMIT</string>
     <string name="welcome">WELCOME</string>
-     <string name="login">LOGIN</string>
+    <string name="login">LOGIN</string>
     <string name="congratulations">CONGRATULATIONS!</string>
     <string name="slot_is_available">SLOT IS AVAILABLE.</string>
     <string name="book_and_pay">BOOK AND PAY</string>
@@ -18,13 +17,13 @@
     <string name="booking_status">BOOKING STATUS</string>
     <string name="logout">Logout</string>
     <string name="welcome_profile">Welcome!</string>
-    <string name="from">FROM :</string>
-    <string name="to">TO :</string>
+    <string name="from">FROM</string>
+    <string name="to">TO</string>
     <string name="check_availability">CHECK AVAILABILITY</string>
     <string name="book_a_slot">BOOK A SLOT</string>
     <string name="back_to_profile11">Back to Profile</string>
     <string name="fromtime">FromTime</string>
-    <string name="number_of_hours">Duration (Hours) :</string>
+    <string name="number_of_hours">Duration (Hrs)</string>
     <string name="back_to_profile_1">Back to Profile</string>
     <string name="book">BOOK</string>
     <string name="back">BACK</string>
@@ -35,5 +34,8 @@
     <string name="email_id">Email ID</string>
     <string name="passwordLogin">Password</string>
     <string name="logintxt">LOGIN</string>
-    <string name="parkme">ParkMe</string>
+    <string name="parkme">ParkMe!</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="extendBooking">Extend Booking</string>
 </resources>

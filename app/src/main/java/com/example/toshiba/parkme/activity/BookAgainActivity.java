@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class bookagain extends AppCompatActivity {
+public class BookAgainActivity extends AppCompatActivity {
 
     FirebaseUser currentuser;
     DatabaseReference databaseReference,databaseReference1;
@@ -32,10 +32,10 @@ public class bookagain extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitybookagain);
+        setContentView(R.layout.activity_book);
 
-        hours = (EditText) findViewById(R.id.editTo1);
-        fromView = (TextView) findViewById(R.id.fromtime1);
+        hours = (EditText) findViewById(R.id.editTo);
+        fromView = (TextView) findViewById(R.id.fromtime);
         currentuser = FirebaseAuth.getInstance().getCurrentUser();
         if(currentuser != null) {
             databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -55,12 +55,10 @@ public class bookagain extends AppCompatActivity {
             }
         });
 
-        Button book = (Button) findViewById(R.id.check1);
+        Button book = (Button) findViewById(R.id.check);
+        book.setText(R.string.extendBooking);
 
         databaseReference1 = FirebaseDatabase.getInstance().getReference();
-
-
-
 
         book.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +70,7 @@ public class bookagain extends AppCompatActivity {
                     databaseReference1.child("Users").child(currentuser.getUid()).child("to").setValue(hrs + tt);
 
                     Toast.makeText(getApplicationContext(), "Booking extended successfully!", Toast.LENGTH_LONG).show();
-                    Intent backIntent = new Intent(bookagain.this, ProfileActivity.class);
+                    Intent backIntent = new Intent(BookAgainActivity.this, ProfileActivity.class);
                     startActivity(backIntent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Booking for next day not available", Toast.LENGTH_LONG).show();
@@ -82,18 +80,20 @@ public class bookagain extends AppCompatActivity {
             }
         });
 
-        Button back_button = (Button) findViewById(R.id.backbook1);
+        Button back_button = (Button) findViewById(R.id.backbook);
 
         back_button.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backIntent = new Intent(bookagain.this, ProfileActivity.class);
+                Intent backIntent = new Intent(BookAgainActivity.this, ProfileActivity.class);
                 startActivity(backIntent);
             }
         }));
 
 
-
-
     }
 }
+
+
+
+
