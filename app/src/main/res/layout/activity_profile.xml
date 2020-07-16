@@ -1,67 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.ProfileActivity"
+    tools:context="com.example.toshiba.parkme.activity.ProfileActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    >
-    <LinearLayout
+    android:background="@drawable/login_page">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/profile"
-    android:textSize="32sp"
-    android:textAlignment="center"/>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
         <TextView
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_profile"
-            android:layout_marginTop="48dp"
+            android:text="@string/profile"
             android:textAlignment="center"
-            android:textSize="32sp" />
+            android:fontFamily="@font/noto_sans_bold"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="@string/welcome_profile"
+            android:textAlignment="center"
+            android:fontFamily="@font/noto_sans"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
 
         <TextView
             android:id="@+id/nameid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:textAlignment="center"
-            android:textSize="32sp" />
+            android:textSize="32sp"
+            android:fontFamily="@font/noto_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/noto_sans"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:text="@string/book_a_slot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameid" />
 
-
-    <Button
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="@string/book_a_slot"
-        />
-
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textSize="14sp"
             android:id="@+id/statusbutton"
+            android:fontFamily="@font/noto_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/booking_status"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/noto_sans"
+            android:id="@+id/logout_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="32dp"
-            android:text="@string/booking_status" />
-
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="@string/logout" />
+            android:layout_marginTop="56dp"
+            android:text="@string/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusbutton" />
 
 
-</LinearLayout>
-</ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
