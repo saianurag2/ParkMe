@@ -3,42 +3,37 @@
     package="com.example.toshiba.parkme">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait">
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".SignupActivity"
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ProfileActivity"
+        <activity android:name=".activity.SignUpActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ListActivity"
+        <activity android:name=".activity.ProfileActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".BookActivity"
+        <activity android:name=".activity.ListActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".AvailableActivity"></activity>
-        <activity android:name=".bookagain"
+        <activity android:name=".activity.BookActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".StatusShow"
+        <activity android:name=".activity.AvailableActivity"/>
+        <activity android:name=".activity.BookAgainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SAMAvailable"
+        <activity android:name=".activity.StatusActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SdAvailable"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RCAvailable"
+        <activity android:name=".activity.AreaAvailableActivity"
             android:screenOrientation="portrait"/>
     </application>
 

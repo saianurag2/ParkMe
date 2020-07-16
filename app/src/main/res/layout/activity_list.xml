@@ -1,52 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toshiba.parkme.ListActivity">
-
-<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:background="@drawable/login_page"
+    tools:context="com.example.toshiba.parkme.activity.ListActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AREAS LIST"
-        android:textSize="32sp"
-        android:textAlignment="center"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/south_avenue_mall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SOUTH AVENUE MALL"
-        android:textAlignment="center"
-        android:layout_marginTop="100dp"
-        android:textSize="32sp"
-        />
+        <TextView
+            android:id="@+id/txt_area_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_bold"
+            android:padding="20dp"
+            android:text="@string/areas_list"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/samdareeya"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SAMDAREEYA"
-        android:textAlignment="center"
-        android:layout_marginTop="16dp"
-        android:textSize="32sp"
-        />
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:id="@+id/south_avenue_mall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/south_avenue_mall"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:fontFamily="@font/noto_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_area_list" />
 
-    <TextView
-        android:id="@+id/pvr_cinemas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SADAR"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        />
-</LinearLayout>
-</ScrollView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:id="@+id/samdareeya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/samdareeya"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:fontFamily="@font/noto_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/south_avenue_mall" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_curved"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:id="@+id/pvr_cinemas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/sadar"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:fontFamily="@font/noto_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/samdareeya" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
