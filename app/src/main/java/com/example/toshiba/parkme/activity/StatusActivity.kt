@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.toshiba.parkme.R
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +22,8 @@ class StatusActivity : AppCompatActivity() {
     private var xfrom: TextView? = null
     private var xtoo: TextView? = null
     private var tvLoc: TextView? = null
+    private var from: Int? = 0
+    private var to: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,14 +48,14 @@ class StatusActivity : AppCompatActivity() {
                 val name = dataSnapshot.child("Users").child(currentuser!!.uid).child("name").getValue(String::class.java) ?: "NA"
                 val email = dataSnapshot.child("Users").child(currentuser!!.uid).child("email").getValue(String::class.java) ?: "NA"
                 val phone = dataSnapshot.child("Users").child(currentuser!!.uid).child("phone_number").getValue(String::class.java) ?: "NA"
-                val from = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java) ?: 0
-                val to = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java) ?: 0
+                from = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java) ?: 0
+                to = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java) ?: 0
                 val loc = dataSnapshot.child("Users").child(currentuser!!.uid).child("loc").getValue(Int::class.java) ?: 0
                 xname!!.text = name
                 xemail!!.text = email
                 xphone!!.text = phone
                 if (from == 0 && to == 0) {
-                    tvLoc!!.visibility = View.INVISIBLE
+                    tvLoc!!.text = getString(R.string.noBooking)
                     xfrom!!.text = getString(R.string.noBooking)
                     xtoo!!.text = getString(R.string.noBooking)
                 } else {
@@ -87,11 +90,21 @@ class StatusActivity : AppCompatActivity() {
         button2.setOnClickListener {
             val button2Intent = Intent(this, ProfileActivity::class.java)
             startActivity(button2Intent)
+            finish()
         }
         val button3 = findViewById<View>(R.id.bookagain) as Button
         button3.setOnClickListener {
-            val button = Intent(this, BookAgainActivity::class.java)
-            startActivity(button)
+            if(from == 0 && to == 0) {
+               val button = Intent(this, BookActivity::class.java)
+                startActivity(button)
+            } else {
+                val button = Intent(this, BookAgainActivity::class.java)
+                startActivity(button)
+            }
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

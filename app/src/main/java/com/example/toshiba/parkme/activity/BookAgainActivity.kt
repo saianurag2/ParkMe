@@ -20,13 +20,19 @@ class BookAgainActivity : AppCompatActivity() {
     var fro = 0
     var tt = 0
     var fromView: TextView? = null
+    var toView : TextView? = null
+    var tvTo : TextView? = null
     var hours: EditText? = null
     var hrs = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book)
-        hours = findViewById<View>(R.id.editTo) as EditText
-        fromView = findViewById<View>(R.id.fromtime) as TextView
+        hours = findViewById(R.id.editTo)
+        fromView = findViewById(R.id.fromtime)
+        toView = findViewById(R.id.to_time)
+        tvTo = findViewById(R.id.textView12)
+        toView?.visibility = View.VISIBLE
+        tvTo?.visibility = View.VISIBLE
         currentuser = FirebaseAuth.getInstance().currentUser
         if (currentuser != null) {
             databaseReference = FirebaseDatabase.getInstance().reference
@@ -35,7 +41,8 @@ class BookAgainActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 fro = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java)!!
                 tt = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java)!!
-                fromView!!.text = Integer.toString(fro) + "Hrs"
+                fromView?.text = Integer.toString(fro) + "Hrs"
+                toView?.text = Integer.toString(tt) + "Hrs"
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
@@ -59,6 +66,11 @@ class BookAgainActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             val backIntent = Intent(this@BookAgainActivity, ProfileActivity::class.java)
             startActivity(backIntent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

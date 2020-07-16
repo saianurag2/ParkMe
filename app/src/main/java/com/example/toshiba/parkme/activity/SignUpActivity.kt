@@ -67,6 +67,7 @@ class SignUpActivity : AppCompatActivity() {
                                     databaseReference.setValue(user)
                                     Toast.makeText(this, "SignUp Successful!", Toast.LENGTH_LONG).show()
                                     startActivity(Intent(applicationContext, ProfileActivity::class.java))
+                                    finish()
                                 } else {
                                     Toast.makeText(this, "SignIn Failure Occurred", Toast.LENGTH_LONG).show()
                                 }
@@ -126,5 +127,9 @@ class SignUpActivity : AppCompatActivity() {
         val inputStr: CharSequence = email
         val pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE)
         return pattern.matcher(inputStr).matches()
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

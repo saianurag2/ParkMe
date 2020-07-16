@@ -218,7 +218,7 @@
             android:background="@drawable/button_curved"
             android:fontFamily="@font/noto_sans"
             android:padding="10dp"
-            android:text="Extend Booking"
+            android:text="@string/book_extend_booking"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@+id/textView11"

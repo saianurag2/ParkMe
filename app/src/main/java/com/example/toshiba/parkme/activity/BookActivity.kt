@@ -54,6 +54,11 @@ class BookActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             val backIntent = Intent(this@BookActivity, ProfileActivity::class.java)
             startActivity(backIntent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

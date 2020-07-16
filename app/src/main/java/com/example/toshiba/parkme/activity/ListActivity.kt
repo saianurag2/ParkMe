@@ -33,7 +33,7 @@ class ListActivity : AppCompatActivity() {
         val samdareeya = findViewById<View>(R.id.samdareeya) as TextView
         samdareeya.setOnClickListener {
             val samdareeyaIntent = Intent(this@ListActivity, AreaAvailableActivity::class.java)
-            samdareeyaIntent.putExtra("Area", "Sd")
+            samdareeyaIntent.putExtra("Area", "RC")
             samdareeyaIntent.putExtra("fromtime", f1)
             samdareeyaIntent.putExtra("totime", t1)
             startActivity(samdareeyaIntent)
@@ -41,10 +41,14 @@ class ListActivity : AppCompatActivity() {
         val pvr_cinemas = findViewById<View>(R.id.pvr_cinemas) as TextView
         pvr_cinemas.setOnClickListener {
             val pvr_cinemasIntent = Intent(this@ListActivity, AreaAvailableActivity::class.java)
-            pvr_cinemasIntent.putExtra("Area", "RC")
+            pvr_cinemasIntent.putExtra("Area", "Sd")
             pvr_cinemasIntent.putExtra("fromtime", f2)
             pvr_cinemasIntent.putExtra("totime", t2)
             startActivity(pvr_cinemasIntent)
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

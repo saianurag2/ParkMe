@@ -21,4 +21,8 @@ class AvailableActivity : AppCompatActivity() {
             startActivity(back)
         }
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

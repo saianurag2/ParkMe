@@ -39,4 +39,5 @@
     <string name="confirm_password">CONFIRM PASSWORD</string>
     <string name="extendBooking">Extend Booking</string>
     <string name="noBooking">No Booking</string>
+    <string name="book_extend_booking">Book/ Extend Booking</string>
 </resources>

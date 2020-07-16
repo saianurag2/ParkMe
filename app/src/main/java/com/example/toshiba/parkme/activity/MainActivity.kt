@@ -15,12 +15,18 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
             val button1Intent = Intent(this@MainActivity, SignUpActivity::class.java)
             startActivity(button1Intent)
+            finish()
         }
         val button2 : Button = findViewById(R.id.login)
         button2.setOnClickListener {
             val button2Intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(button2Intent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }
 

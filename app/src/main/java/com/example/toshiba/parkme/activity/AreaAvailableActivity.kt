@@ -66,6 +66,7 @@ class AreaAvailableActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             val backIntent = Intent(this, ProfileActivity::class.java)
             startActivity(backIntent)
+            finish()
         }
         val back1 = findViewById<View>(R.id.back1) as Button
         back1.setOnClickListener {
@@ -79,8 +80,14 @@ class AreaAvailableActivity : AppCompatActivity() {
             } else {
                 dref!!.child("Users").child(currentUser!!.uid).child("from").setValue(ftime)
                 dref!!.child("Users").child(currentUser!!.uid).child("to").setValue(ttime)
-                dref!!.child("Users").child(currentUser!!.uid).child("loc").setValue(3)
-                if(!areaName.isNullOrEmpty()) {
+                if(areaName == "SAM") {
+                    dref!!.child("Users").child(currentUser!!.uid).child("loc").setValue(1)
+                } else if(areaName == "RC") {
+                    dref!!.child("Users").child(currentUser!!.uid).child("loc").setValue(2)
+                } else if(areaName == "Sd") {
+                    dref!!.child("Users").child(currentUser!!.uid).child("loc").setValue(3)
+                }
+                 if(!areaName.isNullOrEmpty()) {
                     dref!!.child("Parking Area").child(areaName).child("Available").setValue(av - 1)
                     dref!!.child("Parking Area").child(areaName).child("Booked").setValue(bk + 1)
                 }
@@ -89,5 +96,9 @@ class AreaAvailableActivity : AppCompatActivity() {
                 startActivity(back)
             }
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }
