@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -34,11 +35,13 @@ class ProfileActivity : AppCompatActivity() {
         thename = findViewById(R.id.nameid)
         currentUser = FirebaseAuth.getInstance().currentUser
         databaseReference = FirebaseDatabase.getInstance().reference
+        val progressDialog : ProgressBar = findViewById(R.id.progressbar)
         databaseReference!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var name = dataSnapshot.child("Users").child(currentUser!!.uid).child("name").getValue(String::class.java)!!
                 name = name.toUpperCase(Locale.getDefault())
                 thename!!.text = name
+                progressDialog.visibility = View.GONE
                 from = dataSnapshot.child("Users").child(currentUser!!.uid).child("from").getValue(Int::class.java)!!
                 to = dataSnapshot.child("Users").child(currentUser!!.uid).child("to").getValue(Int::class.java)!!
                 loc = dataSnapshot.child("Users").child(currentUser!!.uid).child("loc").getValue(Int::class.java)!!
@@ -58,6 +61,7 @@ class ProfileActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
+                progressDialog.visibility = View.GONE
                 //error occurred
             }
         })

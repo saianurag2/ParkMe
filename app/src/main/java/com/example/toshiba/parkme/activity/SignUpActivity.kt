@@ -3,8 +3,10 @@ package com.example.toshiba.parkme.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.toshiba.parkme.R
@@ -40,14 +42,17 @@ class SignUpActivity : AppCompatActivity() {
         password = findViewById(R.id.password_field)
         confpassword = findViewById(R.id.password_field2)
         signup = findViewById(R.id.submit1)
-
+        val progressDialog : ProgressBar = findViewById(R.id.progressbar)
+        progressDialog.visibility = View.GONE
         //firebase
         mAuth = FirebaseAuth.getInstance()
         signup?.setOnClickListener {
             if (isValidate()) {
                 //SignUp();
+                progressDialog.visibility = View.VISIBLE
                 mAuth!!.createUserWithEmailAndPassword(userEmail!!, userPass!!).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        progressDialog.visibility = View.GONE
                         val fUser = task.result!!.user
                         if (fUser != null) {
                             mAuth!!.signInWithEmailAndPassword(userEmail!!, userPass!!).addOnCompleteListener {
@@ -68,6 +73,7 @@ class SignUpActivity : AppCompatActivity() {
                             }
                         }
                     } else {
+                        progressDialog.visibility = View.GONE
                         Toast.makeText(applicationContext, "SignUp Error Occurred", Toast.LENGTH_LONG).show()
                     }
                 }

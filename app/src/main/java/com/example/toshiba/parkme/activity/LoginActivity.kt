@@ -3,8 +3,10 @@ package com.example.toshiba.parkme.activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.toshiba.parkme.R
@@ -22,13 +24,17 @@ class LoginActivity : AppCompatActivity() {
         mPasswordField = findViewById(R.id.password_field)
         submitButton = findViewById(R.id.submit112)
         mAuth = FirebaseAuth.getInstance()
+        val progressDialog : ProgressBar = findViewById(R.id.progressbar)
+        progressDialog.visibility = View.GONE
         submitButton!!.setOnClickListener {
             val email = mEmailField!!.text.toString()
             val password = mPasswordField!!.text.toString()
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(applicationContext, "Fields Are Empty", Toast.LENGTH_LONG).show()
             } else {
+                progressDialog.visibility = View.VISIBLE
                 mAuth!!.signInWithEmailAndPassword(email, password).addOnCompleteListener(this@LoginActivity) {
+                    progressDialog.visibility = View.GONE
                     if (!it.isSuccessful) {
                         Toast.makeText(applicationContext, "Email/password incorrect", Toast.LENGTH_LONG).show()
                     } else {

@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"/>
@@ -32,11 +33,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.StatusActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SAMAvailableActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SdAvailableActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.RCAvailableActivity"
+        <activity android:name=".activity.AreaAvailableActivity"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -50,8 +50,8 @@ class BookActivity : AppCompatActivity() {
                 }
             }
         }
-        val back_button = findViewById<View>(R.id.backbook) as Button
-        back_button.setOnClickListener {
+        val backButton = findViewById<View>(R.id.backbook) as Button
+        backButton.setOnClickListener {
             val backIntent = Intent(this@BookActivity, ProfileActivity::class.java)
             startActivity(backIntent)
         }

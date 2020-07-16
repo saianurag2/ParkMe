@@ -35,7 +35,7 @@ class BookAgainActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 fro = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java)!!
                 tt = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java)!!
-                fromView!!.text = Integer.toString(fro)
+                fromView!!.text = Integer.toString(fro) + "Hrs"
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}

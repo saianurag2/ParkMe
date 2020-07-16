@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.toshiba.parkme.R
@@ -35,39 +36,50 @@ class StatusActivity : AppCompatActivity() {
         if (currentuser != null) {
             databaseUsers = FirebaseDatabase.getInstance().reference
         }
-
-        databaseUsers!!.addValueEventListener(object : ValueEventListener {
+        val progressDialog : ProgressBar = findViewById(R.id.progressbar)
+        val progressDialog2 : ProgressBar = findViewById(R.id.progressbar2)
+        databaseUsers?.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val name = dataSnapshot.child("Users").child(currentuser!!.uid).child("name").getValue(String::class.java)!!
-                val email = dataSnapshot.child("Users").child(currentuser!!.uid).child("email").getValue(String::class.java)!!
-                val phone = dataSnapshot.child("Users").child(currentuser!!.uid).child("phone_number").getValue(String::class.java)!!
-                val from = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java)!!
-                val to = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java)!!
-                val loc = dataSnapshot.child("Users").child(currentuser!!.uid).child("loc").getValue(Int::class.java)!!
+                progressDialog.visibility = View.GONE
+                progressDialog2.visibility = View.GONE
+                val name = dataSnapshot.child("Users").child(currentuser!!.uid).child("name").getValue(String::class.java) ?: "NA"
+                val email = dataSnapshot.child("Users").child(currentuser!!.uid).child("email").getValue(String::class.java) ?: "NA"
+                val phone = dataSnapshot.child("Users").child(currentuser!!.uid).child("phone_number").getValue(String::class.java) ?: "NA"
+                val from = dataSnapshot.child("Users").child(currentuser!!.uid).child("from").getValue(Int::class.java) ?: 0
+                val to = dataSnapshot.child("Users").child(currentuser!!.uid).child("to").getValue(Int::class.java) ?: 0
+                val loc = dataSnapshot.child("Users").child(currentuser!!.uid).child("loc").getValue(Int::class.java) ?: 0
                 xname!!.text = name
                 xemail!!.text = email
                 xphone!!.text = phone
                 if (from == 0 && to == 0) {
+                    tvLoc!!.visibility = View.INVISIBLE
                     xfrom!!.text = getString(R.string.noBooking)
                     xtoo!!.text = getString(R.string.noBooking)
                 } else {
-                    if (loc == 1) {
-                        tvLoc!!.text = "SAM"
-                        xfrom!!.text = "$from" + "Hrs"
-                        xtoo!!.text = """${to}Hrs"""
-                    } else if (loc == 1) {
-                        tvLoc!!.text = "Samdareeya"
-                        xfrom!!.text = """${from}Hrs"""
-                        xtoo!!.text = """${to}Hrs"""
-                    } else if (loc == 1) {
-                        tvLoc!!.text = "Sadar"
-                        xfrom!!.text = """${from}Hrs"""
-                        xtoo!!.text = "${to}Hrs"
+                    when (loc) {
+                        1 -> {
+                            tvLoc!!.text = "SAM"
+                            xfrom!!.text = "$from" + "Hrs"
+                            xtoo!!.text = """${to}Hrs"""
+                        }
+                        2 -> {
+                            tvLoc!!.text = "Samdareeya"
+                            xfrom!!.text = """${from}Hrs"""
+                            xtoo!!.text = """${to}Hrs"""
+                        }
+                        3 -> {
+                            tvLoc!!.text = "Sadar"
+                            xfrom!!.text = """${from}Hrs"""
+                            xtoo!!.text = "${to}Hrs"
+                        }
                     }
                 }
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {}
+            override fun onCancelled(databaseError: DatabaseError) {
+                progressDialog.visibility = View.GONE
+                progressDialog2.visibility = View.GONE
+            }
         })
 
 
