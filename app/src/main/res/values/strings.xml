@@ -38,4 +38,5 @@
     <string name="sign_up">SIGN UP</string>
     <string name="confirm_password">CONFIRM PASSWORD</string>
     <string name="extendBooking">Extend Booking</string>
+    <string name="noBooking">No Booking</string>
 </resources>

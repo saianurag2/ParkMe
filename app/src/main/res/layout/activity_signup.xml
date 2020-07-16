@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_page"
-    tools:context="com.example.toshiba.parkme.activity.SignupActivity">
+    tools:context="com.example.toshiba.parkme.activity.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -15,10 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.SignupActivity"
+        <activity android:name=".activity.MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SignUpActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.ProfileActivity"
             android:screenOrientation="portrait"/>
@@ -29,13 +30,13 @@
         <activity android:name=".activity.AvailableActivity"/>
         <activity android:name=".activity.BookAgainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.StatusShow"
+        <activity android:name=".activity.StatusActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SAMAvailable"
+        <activity android:name=".activity.SAMAvailableActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SdAvailable"
+        <activity android:name=".activity.SdAvailableActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.RCAvailable"
+        <activity android:name=".activity.RCAvailableActivity"
             android:screenOrientation="portrait"/>
     </application>
 
